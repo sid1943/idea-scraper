@@ -627,6 +627,7 @@ const App = () => {
                       }))}
                       className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
                     />
+                    <span className="ml-2 text-sm text-gray-600">Enable</span>
                   </label>
                 </div>
                 
@@ -698,7 +699,9 @@ const App = () => {
   );
 };
 
-export default App;
+export default App;d border-gray-300 text-blue-600 focus:ring-blue-500"
+                    />
+                    <span className="ml-2 text-sm text-gray-600">Enable</span>
                   </label>
                 </div>
                 
@@ -748,7 +751,4 @@ export default App;
                         ...prev,
                         twitter: { ...prev.twitter, enabled: e.target.checked }
                       }))}
-                      className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
-                    />
-                    <span className="ml-2 text-sm text-gray-600">Enable</span>
-                
+                      className="rounde
