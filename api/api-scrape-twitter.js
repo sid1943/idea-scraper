@@ -1,4 +1,4 @@
-// api/scrape-twitter.js - Vercel Serverless Function for Twitter Scraping
+// api/scrape-twitter.js - Updated with Environment Variables Support
 
 export default async function handler(req, res) {
   // Set CORS headers
@@ -17,10 +17,18 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { bearerToken } = req.body;
+    // Try to get credentials from request body (frontend settings)
+    let { bearerToken } = req.body || {};
+    
+    // If not provided in request, try environment variables
+    if (!bearerToken) {
+      bearerToken = process.env.TWITTER_BEARER_TOKEN;
+    }
     
     if (!bearerToken) {
-      return res.status(400).json({ error: 'Twitter Bearer Token required' });
+      return res.status(400).json({ 
+        error: 'Twitter Bearer Token required. Either configure in app settings or set TWITTER_BEARER_TOKEN environment variable.' 
+      });
     }
 
     console.log('Starting Twitter scraping...');
