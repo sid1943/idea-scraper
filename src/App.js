@@ -751,4 +751,5 @@ export default App;d border-gray-300 text-blue-600 focus:ring-blue-500"
                         ...prev,
                         twitter: { ...prev.twitter, enabled: e.target.checked }
                       }))}
-                      className="rounde
+                      className="rounderounded border-gray-300 text-blue-600 focus:ring-blue-500"
+/>
